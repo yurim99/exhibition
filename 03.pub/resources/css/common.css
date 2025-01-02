@@ -1,0 +1,205 @@
+/********** 공통 **********/
+:root {
+    --point-color: #EFB95B;
+}
+body {
+    font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+    letter-spacing: -0.025rem;
+}
+
+body::-webkit-scrollbar {
+    width: .8rem;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #333;
+    border-radius: .8rem;
+}
+
+body::-webkit-scrollbar-track {
+    background-color: #ccc;
+}
+
+body:has(.dim.active) {
+    overflow: hidden;
+}
+
+.container {
+    width: 100%;
+    min-width: 32rem;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.wrapper {
+    max-width: 144rem;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 2rem;
+    box-sizing: border-box;
+}
+
+.lists {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+}
+
+.img-wrap {
+    position: relative;
+    overflow: hidden;
+    height: 0;
+    transition: all .15s ease-in;
+}
+
+.img-wrap>img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+    transition: all .15s ease-in;
+    box-sizing: border-box;
+}
+
+.section {
+    padding-top: 12rem;
+    padding-bottom: 12rem;
+}
+
+.section.black {
+    background-color: #333;
+}
+
+.section.black * {
+    color: #fff;
+}
+
+.stage {
+    padding-top: 6rem;
+}
+
+/********** header **********/
+
+.header-stage {
+    color: #fff;
+    padding: 3.5rem 2rem 2rem;
+    box-sizing: border-box;
+    position: fixed;
+    width: 100%;
+    z-index: 99;
+    top: 0;
+    background-color: #00000060;
+}
+
+.logo {
+    display: block;
+}
+
+.logo>h1 {
+    text-align: center;
+    font-size: 2.8rem;
+    line-height: 3.4rem;
+    font-family: 'HSBombaram3.0';
+}
+
+.nav__lists {
+    padding-top: 2rem;
+    justify-content: center;
+    gap: 0 3rem;
+}
+
+.nav {
+    display: block;
+}
+
+.nav>h2 {
+    font-size: 2rem;
+    line-height: 2.4rem;
+    font-weight: 500;
+    position: relative;
+    text-align: center;
+    font-family: 'HSBombaram3.0';
+}
+
+.nav>h2::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 1px;
+    background-color: #fff;
+    transition: all .15s ease-in;
+}
+
+@media screen and (min-width : 1024px) {
+    .nav>h2:hover::after {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width : 767px) {
+    .logo>h1 {
+        font-size: 2.4rem;
+        line-height: 3.2rem;
+    }
+    .nav>h2 {
+        font-size: 1.8rem;
+        line-height: 2.2rem;
+    }
+    .section {
+        padding-top: 8rem;
+        padding-bottom: 8rem;
+    }    
+}
+
+@media screen and (max-width : 576px) {
+    .header-stage {
+        padding: 2rem;
+    }
+    .logo>h1 {
+        font-size: 2rem;
+        line-height: 2.6rem;
+    }
+    .nav>h2 {
+        font-size: 1.6rem;
+        line-height: 2rem;
+    }
+    .nav__lists {
+        padding-top: 1.5rem;
+        gap: 1.5rem;
+    }
+}
+@media screen and (max-width : 374px) {
+    .nav__lists {
+        gap: 1rem;
+    }
+}
+
+.footer-stage {
+    background-color: #eee;
+    padding: 6rem 0;
+    text-align: center;
+}
+
+.footer-stage > p {
+    font-size: 2rem;
+    line-height: 2.8rem;
+    font-weight: 500;
+}
+
+
+@media screen and (max-width : 576px) {
+    .footer-stage > p {
+        font-size: 1.8rem;
+        line-height: 2.6rem;
+    }
+}
